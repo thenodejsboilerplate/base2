@@ -1,5 +1,5 @@
 'use strict';
-const logger = require('../lib/logger');
+const logger = require('../libs/logger');
 module.exports = {
 			// route middleware to make sure a user is logged in
   isLoggedIn: (req, res, next)=> {

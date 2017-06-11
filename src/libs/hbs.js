@@ -63,9 +63,10 @@ module.exports = function (app) {
     // Uses multiple partials dirs, templates in "shared/templates/" are shared
     // with the client-side of the app (see below).
     partialsDir: [
-      'shared/templates/',
-      'views/partials/'
-    ]
+      //'shared/templates/',
+      'src/views/partials/'
+    ],
+    layoutsDir: 'src/views/layouts'    
   });
 
 	// Register `hbs` as our view engine using its bound `engine()` function.

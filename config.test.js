@@ -28,7 +28,7 @@ var config = {
   contractVipYear: 8, // month long
   host: hostname,
 
-  uploadDir: path.join(appDir, 'public/upload/'),
+  uploadDir: path.join(appDir, 'src/public/upload/'),
 
   // mongodb 配置
   db: {
@@ -70,7 +70,7 @@ var config = {
     secure: true,
     auth: {
       user: 'admin@trver.com',
-      pass: 'trver123456'
+      pass: 'frank548331198'
     }
   },
 

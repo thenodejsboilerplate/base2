@@ -1,0 +1,21 @@
+<h1>LOGIN</h1>
+<h3><a href="/auth/google">Sign In with Google</a></h3>
+<h3><a href="/auth/github">Sign In with Github</a></h3>
+
+<form method="POST" action="/user/postLogin">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <label>
+    Email: <input type="email" name="email">
+    </label>
+
+    <label>
+    Password: <input type="password" name="password">
+    </label>
+
+    <input type="submit" value="submit">
+</form>
+
+    <hr>
+
+    <p>Need an account? <a href="/user/signup">signup</a></p>
+    <p>Or go <a href="/user/forgotPassword">Forget your Password</a>.</p>
