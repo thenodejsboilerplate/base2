@@ -3,3 +3,6 @@ node_modules
 logs/*
 .eslintrcDeleted.json
 heapdump*
+.DS_Store
+.sass-cache
+logs/*
