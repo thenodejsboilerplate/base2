@@ -1,6 +1,184 @@
+/****loop to output the images in the .trait-* class in the  index.html file; the below code needs fixing!!!!!!!
+@mixin list-trait(){
+  @each $trait in latest,personal,social,tech{
+    @content;
+  }
+}
+******/
+/*
+the function is for turn px to rem
+usage:
+$length : 42em;
+$int    : strip-unit($length); // 42
+
+
+$context: $browser-context: A way to improve the rem function further would be to include a default value. That way specifying the rem base value will be optional.
+*/
+/*
+to get a number without its unit, you need to divide it by 1 of the same unit. To get 42 from 42em, you need to divide 42em by 1em.
+*/
+/*
+if() is a function mimicing the well known one-line conditional statement: var = condition ? true : false. The first parameter of the if() function is the condition, the second one is the result if condition is true, and the first one is the value if condition is false.
+
+Now back to our clamp function, here is what is going on:
+
+If the value is greater than the maximum value, it returns $max
+If the value is lesser than or equals to the maximum value and
+if the value is lesser than the minimum value, it returns $min
+if the value is greater than or equals to the minimum value, it returns $value
+
+that could be useful when you want to be sure the number you pass to a function is between two values, like a percentage for color functions.
+
+$pc: percentage(clamp($value, 0, 100));
+$darkColor: darken($color, $pc);
+
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  text-decoration: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+
 body {
-  color: red; }
-  body div {
-    color: blue; }
+  min-height: 100%; }
+
+/*****set css input placeholder: color.
+      Firefox's placeholder appears to be defaulting with a reduced opacity, so needs to use opacity: 1 here.
+*******/
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #ebebeb;
+  font-size: 1em; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ebebeb;
+  opacity: 1;
+  font-size: 1em; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ebebeb;
+  opacity: 1;
+  font-size: 1em; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ebebeb;
+  font-size: 1em; }
+
+/*******
+[placeholder]{
+	@include placeholder(lighten(#e3e3e3,3%),1em,1)
+}
+*****/
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: #ffffff;
+  color: black; }
+
+a {
+  text-decoration: none; }
+
+a, input[type="button"], input[type="submit"], input[type="search"] {
+  -ms-touch-action: none;
+  touch-action: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+  -webkit-border-radius: 0px;
+  /* Firefox 1-3.6 */
+  -moz-border-radius: 0px;
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: 0px;
+  border: 0; }
+
+pre {
+  padding: 1em 1em;
+  margin-bottom: 1;
+  line-height: 1.5em;
+  overflow: auto;
+  font-size: 13px;
+  padding: 5px;
+  width: auto;
+  max-height: 600px;
+  background: #eee !important;
+  margin-bottom: 1em;
+  font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,sans-serif;
+  color: #3a3a3a !important; }
+
+code {
+  border: 1px solid transparent;
+  background-color: #eee !important;
+  color: #3a3a3a !important; }
+
+.hide {
+  display: none; }
+
+.success {
+  color: #43AC6A; }
+
+.alert {
+  color: #f04124; }
+
+ul li {
+  list-style: none; }
+
+input[type="button"]:hover, input input[type="submit"]:hover {
+  cursor: pointer; }
+input[type="submit"] {
+  border: 0px solid transparent; }
+input[type="button"] {
+  border: 0px solid transparent; }
+
+textarea, input, button {
+  display: block; }
+  textarea:focus, input:focus, button:focus {
+    -moz-outline-style: none;
+    outline-style: none; }
+
+textarea, input {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: break-word; }
+
+.arrow_up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #141414;
+  position: absolute;
+  z-index: 56;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%); }
+
+.arrow_down {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #ffffff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0); }
+
+body {
+  background: white;
+  font-size: 1em; }
+  body footer {
+    background: black;
+    font-size: 1em; }
+  body header {
+    background: white;
+    font-size: 2em; }
 
 /*# sourceMappingURL=app.css.map */

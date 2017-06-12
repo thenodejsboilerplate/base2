@@ -44,7 +44,7 @@ module.exports = function (grunt) {
       },
       dist: {
         files: {
-          '<%= paths.release %>/app.min.js': ['<%= paths.js %>/**/*.js', '!<%= paths.js %>/*-test/*.js', '!<%= paths.js %>/common/*']
+          '<%= paths.release %>/js/app.min.js': ['<%= paths.js %>/**/*.js', '!<%= paths.js %>/*-test/*.js', '!<%= paths.js %>/common/*']
         }
       }
     },
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
       target: {
         files: [
           {
-            '<%= paths.release %>/app.min.css': ['<%= paths.css %>/*.css', '!<%= paths.css %>/app.css.map']
+            '<%= paths.release %>/css/app.min.css': ['<%= paths.css %>/*.css', '!<%= paths.css %>/app.css.map']
           }
         ]
       }
@@ -65,11 +65,11 @@ module.exports = function (grunt) {
       },
       all: {
         src: [
-          '<%= paths.release %>/app.min.js',
-          '<%= paths.release %>/app.min.css'
+          '<%= paths.release %>/js/app.min.js',
+          '<%= paths.release %>/css/app.min.css'
         ],
         dest: [
-          'src/views/shares/main.handlebars' // change it according to the project's root file
+          'src/views/layouts/main.handlebars' // change it according to the project's root file
         ]
       }
     },
@@ -91,7 +91,6 @@ module.exports = function (grunt) {
         files: ['<%= paths.js %>/**/*.js'],
         tasks: ['uglify', 'hashres']
       }
-
     }
 
   })// end of grunt.initConfig
